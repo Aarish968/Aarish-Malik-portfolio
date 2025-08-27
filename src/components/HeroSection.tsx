@@ -39,17 +39,13 @@ const HeroSection = () => {
       <div className={`relative z-20 text-center max-w-4xl mx-auto px-6 transition-all duration-1000 ${
         isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-10'
       }`}>
-        <div className="mb-6">
-          <span className="text-secondary text-lg font-medium tracking-wide">
-            Hello, I'm
-          </span>
-        </div>
-        
-        <h1 className="text-6xl md:text-8xl font-bold mb-6">
-          <span className="text-gradient">AARISH</span>
-          <br />
-          <span className="text-foreground">MALIK</span>
-        </h1>
+        <div className={`relative z-20 text-center max-w-4xl mx-auto px-6 pt-20 md:pt-32 transition-all duration-1000 ${
+  isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-10'
+}`}>
+  <h2 className="text-6xl md:text-8xl font-bold mb-6">
+    <span className="text-gradient">AARISH MALIK</span>
+  </h2>
+</div>
         
         <div className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
           <span className="text-primary">Full Stack Developer</span> & 
