@@ -5,7 +5,7 @@ const ExperienceSection = () => {
   const experiences = [
     {
       title: "Full Stack Developer Intern",
-      company: "Webs Pro Ltd",
+      company: "Wcits Pvt.Ltd",
       location: "Ghaziabad, India",
       period: "Dec 2024 - June 2025",
       description: [

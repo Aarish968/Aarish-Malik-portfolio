@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Download, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-bg.jpg';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -20,11 +20,6 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Developer workspace" 
-          className="w-full h-full object-cover opacity-20"
-        />
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/80" />
       </div>
 
@@ -36,16 +31,45 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className={`relative z-20 text-center max-w-4xl mx-auto px-6 transition-all duration-1000 ${
+      <div className={`relative z-20 text-center max-w-4xl mx-auto px-6 pt-20 md:pt-32 transition-all duration-1000 ${
         isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-10'
       }`}>
-        <div className={`relative z-20 text-center max-w-4xl mx-auto px-6 pt-20 md:pt-32 transition-all duration-1000 ${
-  isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-10'
-}`}>
-  <h2 className="text-6xl md:text-8xl font-bold mb-6">
-    <span className="text-gradient">AARISH MALIK</span>
-  </h2>
-</div>
+        
+        {/* Animated Name with Hover Effect */}
+        <div className="relative mb-6 overflow-hidden">
+          <h2 
+            className="text-4xl md:text-6xl lg:text-7xl font-bold cursor-pointer relative whitespace-nowrap"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Main Text Container */}
+            <div className="relative h-16 md:h-20 lg:h-24 flex items-center justify-center">
+              {/* AARISH MALIK Text */}
+              <span 
+                className={`absolute inset-0 flex items-center justify-center text-gradient transition-all duration-700 ease-in-out whitespace-nowrap ${
+                  isHovered 
+                    ? 'opacity-0 transform -translate-y-full scale-95' 
+                    : 'opacity-100 transform translate-y-0 scale-100'
+                }`}
+              >
+                AARISH MALIK
+              </span>
+              
+              {/* FULL STACK DEVELOPER Text */}
+              <span 
+                className={`absolute inset-0 flex items-center justify-center text-gradient transition-all duration-700 ease-in-out whitespace-nowrap ${
+                  isHovered 
+                    ? 'opacity-100 transform translate-y-0 scale-100' 
+                    : 'opacity-0 transform translate-y-full scale-95'
+                }`}
+              >
+                <span className="text-2xl md:text-4xl lg:text-5xl font-bold">
+                  FULL STACK DEVELOPER
+                </span>
+              </span>
+            </div>
+          </h2>
+        </div>
         
         <div className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
           <span className="text-primary">Full Stack Developer</span> & 
@@ -67,20 +91,20 @@ const HeroSection = () => {
             View My Work
           </Button>
           
-          <Button 
+          {/* <Button 
             variant="outline" 
             size="lg"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-primary hover-lift px-8 py-3 text-lg font-medium"
           >
             <Download className="mr-2 h-5 w-5" />
             Download CV
-          </Button>
+          </Button> */}
         </div>
 
         {/* Social Links */}
         <div className="flex justify-center gap-6 mb-16">
           <a 
-            href="https://github.com/Aarish468" 
+            href="https://github.com/Aarish968" 
             target="_blank" 
             rel="noopener noreferrer"
             className="p-3 rounded-full border border-border hover:border-primary hover:bg-primary/10 hover-lift group"
@@ -89,7 +113,7 @@ const HeroSection = () => {
           </a>
           
           <a 
-            href="https://linkedin.com/in/aarish-malik" 
+            href="https://www.linkedin.com/in/aarish-malik-624499320/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="p-3 rounded-full border border-border hover:border-secondary hover:bg-secondary/10 hover-lift group"
@@ -107,6 +131,73 @@ const HeroSection = () => {
           <ChevronDown className="h-8 w-8 mx-auto" />
         </button>
       </div>
+
+      <style jsx>{`
+        .text-gradient {
+          background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        
+        .hover-lift {
+          transition: transform 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+          transform: translateY(-2px);
+        }
+        
+        .gradient-glow {
+          background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+        }
+        
+        .gradient-primary {
+          background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 0.2; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(1.05); }
+        }
+        
+        @keyframes glow {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.6; }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-pulse-glow {
+          animation: pulse-glow 4s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+          animation: glow 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-up {
+          animation: slideUp 1s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 };

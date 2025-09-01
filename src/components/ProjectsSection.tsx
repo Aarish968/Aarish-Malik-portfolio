@@ -168,12 +168,15 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-6">
               Check out my GitHub profile for more projects, contributions, and code samples.
             </p>
-            <Button 
-              size="lg"
-              className="gradient-primary text-primary-foreground hover:shadow-glow hover-lift"
-            >
-              <Github className="mr-2 h-5 w-5" />
-              Visit GitHub Profile
+            <Button >
+              <a 
+            href="https://github.com/Aarish968" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full border border-border hover:border-primary hover:bg-primary/10 hover-lift group"
+          >
+            <Github className="h-6 w-6 text-muted-foreground group-hover:text-primary" />
+          </a>
             </Button>
           </div>
         </div>

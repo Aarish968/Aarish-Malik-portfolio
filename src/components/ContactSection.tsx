@@ -16,8 +16,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "aarish.malik@email.com",
-      link: "mailto:aarish.malik@email.com",
+      value: "aarishmalik222@email.com",
+      link: "mailto:aarishmalik222@email.com",
       gradient: "from-secondary to-secondary-glow"
     },
     {
@@ -33,13 +33,13 @@ const ContactSection = () => {
     {
       icon: Github,
       name: "GitHub",
-      url: "https://github.com/Aarish468",
+      url: "https://github.com/Aarish968",
       color: "hover:text-primary"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/aarish-malik",
+      url: "https://www.linkedin.com/in/aarish-malik-624499320/",
       color: "hover:text-secondary"
     }
   ];
@@ -196,7 +196,7 @@ const ContactSection = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-border/50">
           <p className="text-muted-foreground">
-            © 2024 Aarish Malik. Built with React, TypeScript & Tailwind CSS.
+            © 2025 Aarish Malik. Built with React, TypeScript & Tailwind CSS.
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             Designed & Developed with ❤️ in India

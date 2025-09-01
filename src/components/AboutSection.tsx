@@ -78,18 +78,22 @@ const AboutSection = () => {
           {/* Right Column - Skills Grid */}
           <div className="grid grid-cols-2 gap-4">
             {highlights.map((item, index) => (
-              <Card key={index} className="glass border-border/50 hover-lift group">
-                <CardContent className="p-6 text-center">
-                  <div className={`inline-flex p-3 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 mb-4 group-hover:shadow-glow transition-all duration-300`}>
-                    <item.icon className={`h-8 w-8 ${item.color}`} />
+              <Card key={index} className="glass border-border/50 group card-hover-enhanced overflow-hidden relative">
+                <CardContent className="p-6 text-center relative z-10">
+                  <div className={`inline-flex p-3 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 mb-4 group-hover:shadow-glow transition-all duration-500 group-hover:scale-110`}>
+                    <item.icon className={`h-8 w-8 ${item.color} transition-all duration-300 group-hover:scale-110`} />
                   </div>
-                  <h4 className="font-bold text-foreground mb-2">
+                  <h4 className="font-bold text-foreground mb-2 transition-all duration-300 group-hover:text-primary">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground transition-all duration-300 group-hover:text-foreground">
                     {item.description}
                   </p>
                 </CardContent>
+                
+                {/* Enhanced Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg" />
               </Card>
             ))}
           </div>
@@ -98,22 +102,72 @@ const AboutSection = () => {
         {/* Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: "2+", label: "Years Experience" },
-            { value: "10+", label: "Projects Built" },
-            { value: "5+", label: "Technologies" },
+            { value: "1+", label: "Years Experience" },
+            { value: "7+", label: "Projects Built" },
+            { value: "4+", label: "Technologies" },
             { value: "100%", label: "Dedication" }
           ].map((stat, index) => (
-            <div key={index} className="text-center glass p-6 rounded-xl hover-lift">
-              <div className="text-3xl font-bold text-gradient mb-2">
+            <div key={index} className="text-center glass p-6 rounded-xl hover-lift stat-card-hover group">
+              <div className="text-3xl font-bold text-gradient mb-2 transition-all duration-300 group-hover:scale-110">
                 {stat.value}
               </div>
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-sm transition-all duration-300 group-hover:text-foreground">
                 {stat.label}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .text-gradient {
+          background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-primary {
+          background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+        }
+        
+        .hover-lift {
+          transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+          transform: translateY(-2px);
+        }
+        
+        .card-hover-enhanced {
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-origin: center;
+        }
+        
+        .card-hover-enhanced:hover {
+          transform: translateY(-8px) scale(1.05);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .stat-card-hover {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .stat-card-hover:hover {
+          transform: translateY(-4px) scale(1.02);
+          box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .glass {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shadow-glow {
+          box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+        }
+      `}</style>
     </section>
   );
 };
