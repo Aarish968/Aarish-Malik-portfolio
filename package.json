@@ -1,6 +1,6 @@
 {
   "name": "vite_react_shadcn_ts",
-  "homepage": "https://aarish968.github.io/Aarish-Malik-portfolio/",
+  "homepage": "https://Aarish968.github.io/Aarish-Malik-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build:dev": "vite build --mode development",
+    "postbuild": "cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview"
   },
