@@ -8,8 +8,6 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "postbuild": "copy dist\\index.html dist\\404.html",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
