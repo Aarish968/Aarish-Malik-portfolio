@@ -19,7 +19,9 @@ const ProjectsSection = () => {
       category: "Web Application",
       status: "Working",
       icon: Users,
-      gradient: "from-primary to-primary-glow"
+      gradient: "from-primary to-primary-glow",
+      liveUrl: "https://www.helloporter.com/",
+      githubUrl: "https://github.com/Aarish968"
     },
     {
       title: "Easy-Reports",
@@ -36,7 +38,9 @@ const ProjectsSection = () => {
       category: "Web Application",
       status: "Completed",
       icon: Database,
-      gradient: "from-secondary to-secondary-glow"
+      gradient: "from-secondary to-secondary-glow",
+      liveUrl: "https://d2g0v25htfpbi5.cloudfront.net/",
+      githubUrl: "https://github.com/Aarish968"
     },
     {
       title: "Password Generator",
@@ -53,7 +57,9 @@ const ProjectsSection = () => {
       category: "Web Tool",
       status: "Completed",
       icon: Calendar,
-      gradient: "from-primary to-secondary"
+      gradient: "from-primary to-secondary",
+      liveUrl: "https://password-umber-beta.vercel.app/",
+      githubUrl: "https://github.com/Aarish968"
     }
   ];
 
@@ -141,6 +147,7 @@ const ProjectsSection = () => {
                   <Button 
                     size="sm" 
                     className="flex-1 gradient-primary text-primary-foreground hover:shadow-glow"
+                    onClick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Live Demo
@@ -150,6 +157,7 @@ const ProjectsSection = () => {
                     variant="outline" 
                     size="sm"
                     className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    onClick={() => window.open(project.githubUrl, '_blank', 'noopener,noreferrer')}
                   >
                     <Github className="h-4 w-4" />
                   </Button>
@@ -168,15 +176,11 @@ const ProjectsSection = () => {
             <p className="text-muted-foreground mb-6">
               Check out my GitHub profile for more projects, contributions, and code samples.
             </p>
-            <Button >
-              <a 
-            href="https://github.com/Aarish968" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-3 rounded-full border border-border hover:border-primary hover:bg-primary/10 hover-lift group"
-          >
-            <Github className="h-6 w-6 text-muted-foreground group-hover:text-primary" />
-          </a>
+            <Button 
+              onClick={() => window.open('https://github.com/Aarish968', '_blank', 'noopener,noreferrer')}
+            >
+              <Github className="mr-2 h-4 w-4" />
+              Visit GitHub Profile
             </Button>
           </div>
         </div>
