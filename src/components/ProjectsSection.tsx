@@ -17,7 +17,7 @@ const ProjectsSection = () => {
         "Healthcare provider management"
       ],
       category: "Web Application",
-      status: "Completed",
+      status: "Working",
       icon: Users,
       gradient: "from-primary to-primary-glow"
     },
